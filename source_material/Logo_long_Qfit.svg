@@ -1,0 +1,21 @@
+<svg id="Logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="99.873" height="34.711" viewBox="0 0 99.873 34.711">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_17309" data-name="Rectangle 17309" width="99.873" height="34.711" fill="none"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x2="0.919" y2="0.331" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#49bcab"/>
+      <stop offset="1" stop-color="#c6fb81"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_37456" data-name="Group 37456">
+    <g id="Group_37455" data-name="Group 37455" clip-path="url(#clip-path)">
+      <path id="Path_30146" data-name="Path 30146" d="M6.517,468.026l-1.024,9.6H0l1.544-14.487,26.409.043-.516,4.84ZM2.64,456.847l.042-.114a6.53,6.53,0,0,1,1.836-2.72,7.392,7.392,0,0,1,3.07-1.5,19.214,19.214,0,0,1,4.6-.469H29.224l-.512,4.8Z" transform="translate(39.367 -447.561)" fill="#fff" fill-rule="evenodd"/>
+      <path id="Path_30147" data-name="Path 30147" d="M319.738,461.648l1.29-9.6h-5.494l-2.166,19.589c-.335,3.029.732,4.734,3.7,5.528a17.8,17.8,0,0,0,4.485.469h6.681l.491-4.8H318.3l.847-6.305,6.15-.01.5-4.863Z" transform="translate(-235.471 -447.561)" fill="#fff" fill-rule="evenodd"/>
+      <path id="Path_30148" data-name="Path 30148" d="M34.736,7.339a1.892,1.892,0,0,0-.478-1.322,2.164,2.164,0,0,0-1.226-.7,9.147,9.147,0,0,0-2.07-.2H21.642a10.729,10.729,0,0,0-2.249.2,3.056,3.056,0,0,0-2.35,2.025A6.659,6.659,0,0,0,16.523,9.4c-.167,3.065-.564,6.428-.677,9.4a2.84,2.84,0,0,0,.318,1.6,1.853,1.853,0,0,0,1.191.8,9.966,9.966,0,0,0,2.313.215l1.5.007,12.582.106,9.52,10.644L29.844,26.372H18.564a20.16,20.16,0,0,1-4.7-.449,5.383,5.383,0,0,1-2.777-1.5,4.749,4.749,0,0,1-1.142-2.774,27.734,27.734,0,0,1,.246-4.259l.615-8.244A12.768,12.768,0,0,1,12,4.884,7.415,7.415,0,0,1,14.09,2.051a8.276,8.276,0,0,1,3.3-1.563A20.587,20.587,0,0,1,22.241,0h9.813a18.514,18.514,0,0,1,4.691.488,5.508,5.508,0,0,1,2.767,1.563,4.865,4.865,0,0,1,1.132,2.833A22.611,22.611,0,0,1,40.4,9.142L38.921,22.954l-4.877-5.619Z" transform="translate(-9.211 1.193)" fill-rule="evenodd" fill="url(#linear-gradient)"/>
+      <path id="Path_30149" data-name="Path 30149" d="M446.272,621.113l.549-4.785H450.8l-.549,4.785Z" transform="translate(-352.107 -591.043)" fill-rule="evenodd" fill="url(#linear-gradient)"/>
+      <path id="Path_30153" data-name="Path 30153" d="M257.7,456.891l.533-4.847h5.7Z" transform="translate(-186.801 -447.561)" fill-rule="evenodd" fill="url(#linear-gradient)"/>
+      <path id="Path_30154" data-name="Path 30154" d="M241.8,503.513l-2.1,19.069h5.7l2.1-19.069Z" transform="translate(-171.034 -492.513)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

@@ -11,9 +11,9 @@
 **Project Name:** QFit Website
 **Type:** Marketing / Product website for the QFit fitness app
 **Company:** Piksel
-**Repository:** https://github.com/HansJuergenMaas/qfit-website (private)
+**Repository:** https://github.com/HansJuergenMaas/Qfit_Piksel_Side (private)
 **Goal:** HTML + Tailwind CSS prototype to serve as a template for WordPress (piksel.com)
-**Local development folder:** ~/Documents/Piksel/qfit-website
+**Local development folder:** ~/Documents/My-Projects/WebSite/QFit_Piksel_Side
 
 ---
 
@@ -84,9 +84,9 @@ Full details: see VISION.md and FEATURES.md
 
 ## Current Project Status
 
-**Phase:** 0 - Setup
-**Last update:** Project started
-**Next step:** Bring in existing materials, define vision, develop design with Stitch
+**Phase:** 1 - Design
+**Last update:** 2026-04-22
+**Next step:** Review Stitch proposal, confirm design direction, begin building index.html from stitch_qfit_marketing_platform_website/code.html as the base
 
 ---
 
@@ -94,7 +94,7 @@ Full details: see VISION.md and FEATURES.md
 
 ### Starting a new session
 ```bash
-cd ~/Documents/Piksel/qfit-website
+cd ~/Documents/My-Projects/WebSite/QFit_Piksel_Side
 git pull
 claude
 ```
@@ -119,6 +119,7 @@ git push
 | Date | What was done | Next step |
 |------|--------------|-----------|
 | 2026-04 | Project started, initial docs created | Bring in existing materials, define vision |
+| 2026-04-22 | Read all source material (wireframe, PDFs, SVGs). Wrote full VISION.md from wireframe content. Identified Piksel brand fonts (Manrope + Inter). Confirmed exact logo gradient colors (#49bcab → #c6fb81) from SVG source. Received Stitch design proposal "Precision Performance". Added Logo SVGs, Stitch output, Piksel font reference to source_material. Created STITCH_PROMPT.md. Updated DESIGN.md placeholder. | Confirm Stitch design direction with PO, then build index.html using stitch code.html as base, integrate real logo SVG (update wordmark fill for light bg), integrate QFit content |
 
 ---
 

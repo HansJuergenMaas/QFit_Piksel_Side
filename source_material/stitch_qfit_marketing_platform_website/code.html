@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>QFit | Better workouts. Guaranteed.</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "outline": "#6d7a6e",
+                      "primary-container": "#4ece7a",
+                      "inverse-primary": "#60de88",
+                      "on-error": "#ffffff",
+                      "tertiary-container": "#51cf65",
+                      "secondary-fixed-dim": "#45dfa9",
+                      "on-primary-fixed-variant": "#005227",
+                      "secondary-container": "#68fcc4",
+                      "on-primary-container": "#005428",
+                      "outline-variant": "#bccabb",
+                      "on-surface-variant": "#3d4a3f",
+                      "inverse-surface": "#313030",
+                      "primary": "#006d36",
+                      "surface-dim": "#dcd9d9",
+                      "on-tertiary": "#ffffff",
+                      "background": "#fcf9f8",
+                      "surface-container-highest": "#e5e2e1",
+                      "secondary": "#006c4e",
+                      "surface-container": "#f0eded",
+                      "on-secondary": "#ffffff",
+                      "secondary-fixed": "#68fcc4",
+                      "on-secondary-fixed": "#002115",
+                      "on-background": "#1c1b1b",
+                      "surface": "#fcf9f8",
+                      "tertiary": "#006e25",
+                      "on-secondary-container": "#007353",
+                      "on-error-container": "#93000a",
+                      "surface-bright": "#fcf9f8",
+                      "tertiary-fixed-dim": "#62df72",
+                      "on-primary": "#ffffff",
+                      "surface-tint": "#006d36",
+                      "on-tertiary-container": "#00541a",
+                      "on-secondary-fixed-variant": "#00513a",
+                      "on-tertiary-fixed-variant": "#00531a",
+                      "surface-variant": "#e5e2e1",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-fixed": "#7dfca2",
+                      "inverse-on-surface": "#f3f0ef",
+                      "tertiary-fixed": "#7ffc8c",
+                      "surface-container-high": "#eae7e7",
+                      "primary-fixed-dim": "#60de88",
+                      "error-container": "#ffdad6",
+                      "surface-container-low": "#f6f3f2",
+                      "on-primary-fixed": "#00210c",
+                      "on-tertiary-fixed": "#002106",
+                      "on-surface": "#1c1b1b",
+                      "error": "#ba1a1a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xs": "8px",
+                      "xl": "64px",
+                      "lg": "40px",
+                      "margin": "32px",
+                      "gutter": "24px",
+                      "sm": "16px",
+                      "md": "24px",
+                      "base": "4px"
+              },
+              "fontFamily": {
+                      "label-caps": ["Inter"],
+                      "display-lg": ["Manrope"],
+                      "body-sm": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "metric-xl": ["Inter"],
+                      "h1": ["Manrope"],
+                      "h2": ["Manrope"],
+                      "h3": ["Manrope"],
+                      "body-md": ["Inter"]
+              },
+              "fontSize": {
+                      "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "metric-xl": ["40px", {"lineHeight": "1.0", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+                      "h1": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "h2": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "h3": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .bento-card {
+            background-color: #f3f4f6;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        .bento-card:hover {
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.03);
+            border-color: #4ece7a;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #4ece7a, #3dd9a4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .step-active {
+            background-color: #4ece7a;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface">
+<!-- Navigation Bar -->
+<nav class="sticky top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm transition-all duration-200 ease-in-out">
+<div class="flex justify-between items-center h-20 px-10 max-w-7xl mx-auto">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-[#6be87a] to-[#3dd9a4] flex items-center justify-center">
+<span class="text-white font-black italic text-xl">Q</span>
+</div>
+<span class="text-xl font-black italic text-gray-900">Fit</span>
+</div>
+<div class="hidden md:flex gap-8 font-manrope text-sm font-semibold tracking-tight text-gray-600">
+<a class="hover:text-emerald-500 transition-colors" href="#">How it works</a>
+<a class="hover:text-emerald-500 transition-colors" href="#">Features</a>
+<a class="hover:text-emerald-500 transition-colors" href="#">Use cases</a>
+<a class="hover:text-emerald-500 transition-colors" href="#">Pricing</a>
+<a class="hover:text-emerald-500 transition-colors" href="#">About</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2.5 rounded-full font-manrope text-sm font-semibold hover:bg-[#3dd9a4] transition-colors">
+                Get started
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-10 py-xl grid md:grid-cols-2 gap-12 items-center">
+<div class="flex flex-col gap-sm">
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase">Digital Gym Application</span>
+<h1 class="font-display-lg text-display-lg text-on-background">Better workouts.<br/><span class="gradient-text">Guaranteed.</span></h1>
+<div class="flex gap-2 mt-md p-1 bg-surface-container-low w-fit rounded-full border border-outline-variant">
+<button class="px-4 py-2 rounded-full text-sm font-semibold bg-white shadow-sm text-primary">Athlete</button>
+<button class="px-4 py-2 rounded-full text-sm font-semibold text-on-surface-variant hover:bg-white/50">Trainer</button>
+<button class="px-4 py-2 rounded-full text-sm font-semibold text-on-surface-variant hover:bg-white/50">Gym</button>
+<button class="px-4 py-2 rounded-full text-sm font-semibold text-on-surface-variant hover:bg-white/50">Club</button>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-sm max-w-lg">
+                Precision-engineered training intelligence for elite performers. Measure what matters and scale your coaching impact with AI-driven insights.
+            </p>
+<div class="flex gap-4 mt-lg">
+<button class="bg-primary-container text-on-primary-container px-8 py-4 rounded-full font-manrope font-bold hover:bg-[#3dd9a4] transition-all">
+                    Get started
+                </button>
+<button class="border border-outline-variant text-on-background px-8 py-4 rounded-full font-manrope font-bold hover:bg-surface-container transition-all">
+                    See how it works
+                </button>
+</div>
+</div>
+<div class="relative group">
+<div class="absolute -inset-1 bg-gradient-to-r from-primary-container to-secondary-container rounded-xl blur opacity-20 group-hover:opacity-30 transition duration-1000 group-hover:duration-200"></div>
+<div class="relative bg-inverse-surface rounded-xl p-6 shadow-2xl overflow-hidden border border-white/10">
+<div class="flex justify-between items-center mb-md border-b border-white/5 pb-4">
+<div class="flex gap-2">
+<div class="w-3 h-3 rounded-full bg-error"></div>
+<div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+<div class="w-3 h-3 rounded-full bg-primary-container"></div>
+</div>
+<span class="text-white/40 font-label-caps text-[10px]">ANALYTICS ENGINE v4.2</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-white/5 p-4 rounded-lg">
+<span class="text-white/60 font-label-caps text-xs block mb-2">VO2 MAX TREND</span>
+<div class="h-24 w-full bg-gradient-to-t from-primary-container/20 to-transparent rounded-sm flex items-end">
+<div class="flex gap-1 w-full px-2 pb-2 items-end h-full">
+<div class="w-1/6 bg-primary-container/40 h-[40%]"></div>
+<div class="w-1/6 bg-primary-container/60 h-[60%]"></div>
+<div class="w-1/6 bg-primary-container/80 h-[50%]"></div>
+<div class="w-1/6 bg-primary-container h-[90%]"></div>
+<div class="w-1/6 bg-primary-container/70 h-[70%]"></div>
+<div class="w-1/6 bg-primary-container h-full"></div>
+</div>
+</div>
+</div>
+<div class="bg-white/5 p-4 rounded-lg">
+<span class="text-white/60 font-label-caps text-xs block mb-2">ACTIVE LOAD</span>
+<div class="flex items-center justify-center h-24">
+<div class="w-20 h-20 rounded-full border-4 border-white/5 border-t-primary-container animate-spin-slow"></div>
+<span class="absolute text-white font-metric-xl text-2xl">84%</span>
+</div>
+</div>
+</div>
+<div class="mt-4 p-4 bg-white/5 rounded-lg border border-primary-container/20">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" data-icon="neurology">neurology</span>
+<span class="text-white/90 text-sm font-medium italic">AI INSIGHT: Hypertrophy potential high for next session.</span>
+</div>
+</div>
+</div>
+<img class="hidden" data-alt="professional modern dark themed fitness analytics dashboard showing performance metrics and biometric data visualization with glowing green highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8MA9-BM21iKUm_Z1eXUW8cyetqon_JQUa1pacQmvM7avAq1WCc66xqMvZsl6_OxLz_y_FwcR2VthF2OUbPqvnJU06u_lRKIpDLLOogn_p55ioY8sE812Dlc_fR-fDqPcuCqESrpWJa5rlF6XpyDsfNhXivRMiQ5e7EEGofPReHcE-VlXZpxOvp2FNXiucFP6eia5o0USRpq7OUbU2DF7CCT8ncxnFFdvwyB0VEKiRPzKYg7uJH7SHHiW4-aD5CFtMWbWiuyqdlON0"/>
+</div>
+</section>
+<!-- Problem Section -->
+<section class="bg-surface-container-low py-xl px-10">
+<div class="max-w-7xl mx-auto">
+<h2 class="font-h1 text-h1 text-center mb-xl">The gym industry has a <span class="text-primary">fundamental problem.</span></h2>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div class="bento-card p-md rounded-xl">
+<span class="material-symbols-outlined text-outline mb-4 text-3xl" data-icon="groups_2">groups_2</span>
+<h3 class="font-h3 text-h3 mb-2">Generic training</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Standardized programs fail to account for individual biomechanics and metabolic thresholds.</p>
+</div>
+<div class="bento-card p-md rounded-xl">
+<span class="material-symbols-outlined text-outline mb-4 text-3xl" data-icon="trending_down">trending_down</span>
+<h3 class="font-h3 text-h3 mb-2">Trainers don't scale</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Quality coaching is limited by hours in the day. Professional oversight remains a luxury.</p>
+</div>
+<div class="bento-card p-md rounded-xl">
+<span class="material-symbols-outlined text-outline mb-4 text-3xl" data-icon="person_off">person_off</span>
+<h3 class="font-h3 text-h3 mb-2">High early churn</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Lack of visible progress and personalization leads to 50% member dropout within 6 months.</p>
+</div>
+<div class="bento-card p-md rounded-xl">
+<span class="material-symbols-outlined text-outline mb-4 text-3xl" data-icon="visibility_off">visibility_off</span>
+<h3 class="font-h3 text-h3 mb-2">No operational visibility</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Gym owners lack real-time data on workout efficacy and member engagement levels.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Value Prop Section -->
+<section class="py-xl px-10">
+<div class="max-w-7xl mx-auto">
+<div class="border-l-8 border-primary-container pl-10 py-4 mb-xl max-w-3xl">
+<blockquote class="font-display-lg text-h1 italic text-on-background">
+                    "QFit is not content. It is training intelligence."
+                </blockquote>
+</div>
+<div class="grid md:grid-cols-3 gap-xl mb-xl">
+<div>
+<div class="w-12 h-12 bg-primary-container/10 rounded-lg flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-primary" data-icon="psychology">psychology</span>
+</div>
+<h4 class="font-h3 text-h3 mb-sm">Intelligence layer</h4>
+<p class="font-body-md text-on-surface-variant">Our AI analyzes thousands of data points to create a unique physiological map for every user.</p>
+</div>
+<div>
+<div class="w-12 h-12 bg-primary-container/10 rounded-lg flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-primary" data-icon="ads_click">ads_click</span>
+</div>
+<h4 class="font-h3 text-h3 mb-sm">Goal-focused</h4>
+<p class="font-body-md text-on-surface-variant">Dynamic adjustments ensure that every single rep contributes directly to the user's primary objective.</p>
+</div>
+<div>
+<div class="w-12 h-12 bg-primary-container/10 rounded-lg flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-primary" data-icon="bolt">bolt</span>
+</div>
+<h4 class="font-h3 text-h3 mb-sm">Automated &amp; scalable</h4>
+<p class="font-body-md text-on-surface-variant">Deploy professional-grade training at scale without increasing headcount or overhead costs.</p>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter bg-primary-container/5 rounded-3xl p-xl">
+<div class="text-center">
+<div class="font-metric-xl text-primary">2,000+</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant mt-2 uppercase">Exercises</div>
+</div>
+<div class="text-center">
+<div class="font-metric-xl text-primary">11</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant mt-2 uppercase">Goals</div>
+</div>
+<div class="text-center">
+<div class="font-metric-xl text-primary">600+</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant mt-2 uppercase">Muscles</div>
+</div>
+<div class="text-center">
+<div class="font-metric-xl text-primary">17</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant mt-2 uppercase">Onboarding steps</div>
+</div>
+</div>
+</div>
+</section>
+<!-- How it Works Section -->
+<section class="bg-white py-xl px-10 overflow-hidden">
+<div class="max-w-7xl mx-auto">
+<h2 class="font-h1 text-h1 text-center mb-xl">From goals to gains — four steps.</h2>
+<div class="relative flex flex-col md:flex-row justify-between gap-10 md:gap-0">
+<!-- Step 1 -->
+<div class="relative flex-1 text-center px-4">
+<div class="w-16 h-16 rounded-full border-2 border-primary-container flex items-center justify-center mx-auto mb-4 bg-white relative z-10">
+<span class="font-bold text-primary">01</span>
+</div>
+<h4 class="font-h3 text-body-lg font-bold mb-2">Assessment</h4>
+<p class="text-sm text-on-surface-variant">AI physical baseline mapping.</p>
+<div class="hidden md:block absolute top-8 left-[60%] w-full h-[2px] bg-gray-100 z-0"></div>
+</div>
+<!-- Step 2 -->
+<div class="relative flex-1 text-center px-4">
+<div class="w-16 h-16 rounded-full border-2 border-primary-container flex items-center justify-center mx-auto mb-4 bg-white relative z-10">
+<span class="font-bold text-primary">02</span>
+</div>
+<h4 class="font-h3 text-body-lg font-bold mb-2">Goals</h4>
+<p class="text-sm text-on-surface-variant">Hyper-personalized target setting.</p>
+<div class="hidden md:block absolute top-8 left-[60%] w-full h-[2px] bg-gray-100 z-0"></div>
+</div>
+<!-- Step 3 -->
+<div class="relative flex-1 text-center px-4">
+<div class="w-16 h-16 rounded-full border-2 border-primary-container flex items-center justify-center mx-auto mb-4 bg-white relative z-10">
+<span class="font-bold text-primary">03</span>
+</div>
+<h4 class="font-h3 text-body-lg font-bold mb-2">Equipment</h4>
+<p class="text-sm text-on-surface-variant">Synchronize with available kit.</p>
+<div class="hidden md:block absolute top-8 left-[60%] w-full h-[2px] bg-gray-100 z-0"></div>
+</div>
+<!-- Step 4 -->
+<div class="relative flex-1 text-center px-4">
+<div class="w-16 h-16 rounded-full step-active flex items-center justify-center mx-auto mb-4 relative z-10 shadow-lg shadow-primary-container/40 scale-110">
+<span class="font-bold">04</span>
+</div>
+<h4 class="font-h3 text-body-lg font-bold mb-2">Plan</h4>
+<p class="text-sm text-on-surface-variant">Live adaptive training program.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Capabilities Section -->
+<section class="bg-surface-container-low py-xl px-10">
+<div class="max-w-7xl mx-auto">
+<div class="mb-xl text-center">
+<h2 class="font-h1 text-h1">Every tool a trainer needs.</h2>
+<p class="font-h3 text-primary">Every insight an athlete deserves.</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<div class="bento-card p-md rounded-xl border-l-4 border-l-primary">
+<span class="material-symbols-outlined text-primary mb-4" data-icon="monitoring">monitoring</span>
+<h4 class="font-h3 text-h3 mb-2">Bio-Feedback</h4>
+<p class="text-on-surface-variant text-sm">Real-time analysis of heart rate variability and strain levels during every set.</p>
+</div>
+<div class="bento-card p-md rounded-xl">
+<span class="material-symbols-outlined text-primary mb-4" data-icon="auto_awesome">auto_awesome</span>
+<h4 class="font-h3 text-h3 mb-2">Auto-Progression</h4>
+<p class="text-on-surface-variant text-sm">Weight and rep counts adjust automatically based on last session's performance.</p>
+</div>
+<div class="bento-card p-md rounded-xl">
+<span class="material-symbols-outlined text-primary mb-4" data-icon="videocam">videocam</span>
+<h4 class="font-h3 text-h3 mb-2">Form Correction</h4>
+<p class="text-on-surface-variant text-sm">AI vision analysis provides instant posture and tempo feedback to prevent injury.</p>
+</div>
+<div class="bento-card p-md rounded-xl">
+<span class="material-symbols-outlined text-primary mb-4" data-icon="calendar_month">calendar_month</span>
+<h4 class="font-h3 text-h3 mb-2">Predictive Load</h4>
+<p class="text-on-surface-variant text-sm">Forecast upcoming fatigue levels to optimize recovery days and peak performance.</p>
+</div>
+<div class="bento-card p-md rounded-xl border-l-4 border-l-primary">
+<span class="material-symbols-outlined text-primary mb-4" data-icon="analytics">analytics</span>
+<h4 class="font-h3 text-h3 mb-2">Cohort Analysis</h4>
+<p class="text-on-surface-variant text-sm">Compare progress against global benchmarks and similar demographic profiles.</p>
+</div>
+<div class="bento-card p-md rounded-xl">
+<span class="material-symbols-outlined text-primary mb-4" data-icon="devices">devices</span>
+<h4 class="font-h3 text-h3 mb-2">Universal Sync</h4>
+<p class="text-on-surface-variant text-sm">Connects seamlessly with Apple Health, Garmin, Whoop, and gym hardware.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Personas Section -->
+<section class="py-xl px-10">
+<div class="max-w-7xl mx-auto">
+<div class="flex overflow-x-auto gap-8 border-b border-gray-100 mb-xl pb-4 no-scrollbar">
+<button class="whitespace-nowrap font-manrope font-bold text-primary border-b-2 border-primary-container pb-4">Athletes &amp; Trainers</button>
+<button class="whitespace-nowrap font-manrope font-bold text-gray-400 hover:text-on-surface transition-colors pb-4">Gyms &amp; Fitness Clubs</button>
+<button class="whitespace-nowrap font-manrope font-bold text-gray-400 hover:text-on-surface transition-colors pb-4">Sports Clubs &amp; Schools</button>
+<button class="whitespace-nowrap font-manrope font-bold text-gray-400 hover:text-on-surface transition-colors pb-4">Equipment Manufacturers</button>
+</div>
+<div class="grid lg:grid-cols-2 gap-xl items-center">
+<div class="flex flex-col gap-md">
+<h3 class="font-h1 text-h1">Empower the individual. Scale the professional.</h3>
+<p class="font-body-lg text-on-surface-variant">Trainers can now manage 50+ clients with the same level of attention as they once managed 5. Automated programming handles the logistics, so humans can focus on the motivation.</p>
+<ul class="space-y-4">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" data-icon="check_circle" data-weight="fill">check_circle</span>
+<span class="font-medium">10x coaching efficiency</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" data-icon="check_circle" data-weight="fill">check_circle</span>
+<span class="font-medium">Automated workout logging</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" data-icon="check_circle" data-weight="fill">check_circle</span>
+<span class="font-medium">Direct client communication hub</span>
+</li>
+</ul>
+</div>
+<div class="bg-gray-50 rounded-3xl p-10 relative">
+<div class="flex flex-col gap-6">
+<div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+<span class="font-label-caps text-on-surface-variant block mb-2 uppercase">Retention Rate Improvement</span>
+<div class="flex items-end gap-2">
+<span class="font-metric-xl text-primary">+34%</span>
+<span class="text-on-surface-variant text-sm mb-2">vs industry average</span>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 ml-12">
+<span class="font-label-caps text-on-surface-variant block mb-2 uppercase">Avg. Trainer Time Saved</span>
+<div class="flex items-end gap-2">
+<span class="font-metric-xl text-primary">12.5h</span>
+<span class="text-on-surface-variant text-sm mb-2">per week</span>
+</div>
+</div>
+</div>
+<div class="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-tr from-primary-container to-secondary-container rounded-full blur-2xl opacity-20"></div>
+<img class="hidden" data-alt="professional trainer in a high-end gym setting using a tablet to monitor athlete performance data and training charts" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1OVuJQ3wkGgWtMg01_EhCcG8uNs97--YNZx2CUZ71X0-nrZpIlg7-8wplwNkwFZaR4e6Y4xOCr8tvzNEmHQSphLCiyKESPu085gNvkq7mEPrKn5vmTJHaMleHUX7qOETcIIFDfCVMl1A-C7S168LD9dxszb3vRvCipL2-QMq7ledKQWtHPHL4qofi60LOczuyQUSr65Fr0yPWt8QcZbMlfts7LnGVXOefgKSA6EowzATXDn6SJK7JC5OdFEopTmn30op5gFvY0Nen"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Bottom CTA -->
+<section class="max-w-7xl mx-auto px-10 pb-xl">
+<div class="bg-surface-container-low rounded-[40px] p-xl text-center border border-gray-100">
+<h2 class="font-h1 text-display-lg max-w-2xl mx-auto mb-md">Ready to make your workouts better — guaranteed?</h2>
+<div class="flex flex-col md:flex-row justify-center gap-4 mt-lg">
+<button class="bg-primary-container text-on-primary-container px-10 py-5 rounded-full font-manrope font-bold text-lg hover:bg-[#3dd9a4] transition-all shadow-lg shadow-primary-container/20">
+                    Get started
+                </button>
+<button class="bg-white text-on-background border border-outline-variant px-10 py-5 rounded-full font-manrope font-bold text-lg hover:bg-gray-50 transition-all">
+                    Request a demo
+                </button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-50 border-t border-gray-200 py-16 px-10">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="flex flex-col gap-sm">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-gradient-to-tr from-[#6be87a] to-[#3dd9a4] flex items-center justify-center">
+<span class="text-white font-black italic text-xs">Q</span>
+</div>
+<span class="text-lg font-bold text-gray-900">Fit.</span>
+</div>
+<p class="font-inter text-sm text-gray-500 max-w-xs">
+                    Next-generation training intelligence for high-performance facilities and athletes.
+                </p>
+<a class="text-emerald-500 font-medium text-sm" href="mailto:contact@qfit.ai">contact@qfit.ai</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-bold text-gray-900 text-sm">Product</span>
+<ul class="flex flex-col gap-2 font-inter text-sm text-gray-500">
+<li><a class="hover:text-gray-900 transition-all underline decoration-emerald-500/30 underline-offset-4" href="#">Intelligence Layer</a></li>
+<li><a class="hover:text-gray-900 transition-all" href="#">Features</a></li>
+<li><a class="hover:text-gray-900 transition-all" href="#">Integrations</a></li>
+<li><a class="hover:text-gray-900 transition-all" href="#">Pricing</a></li>
+</ul>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-bold text-gray-900 text-sm">Company</span>
+<ul class="flex flex-col gap-2 font-inter text-sm text-gray-500">
+<li><a class="hover:text-gray-900 transition-all underline decoration-emerald-500/30 underline-offset-4" href="#">About</a></li>
+<li><a class="hover:text-gray-900 transition-all" href="#">Careers</a></li>
+<li><a class="hover:text-gray-900 transition-all" href="#">Support</a></li>
+<li><a class="hover:text-gray-900 transition-all" href="#">Contact</a></li>
+</ul>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-bold text-gray-900 text-sm">Legal</span>
+<ul class="flex flex-col gap-2 font-inter text-sm text-gray-500">
+<li><a class="hover:text-gray-900 transition-all" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-gray-900 transition-all underline decoration-emerald-500/30 underline-offset-4" href="#">Terms of Service</a></li>
+</ul>
+<div class="mt-4 text-xs text-gray-400">
+                    © 2024 QFit Athletic Laboratories. All rights reserved.
+                </div>
+</div>
+</div>
+</footer>
+</body></html>
